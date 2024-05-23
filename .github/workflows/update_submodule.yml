@@ -1,0 +1,23 @@
+name: Update screen-background-light submodule
+
+on:
+  push:
+    paths:
+      - 'screen-background-light/**'
+
+jobs:
+  update-submodule:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Update screen-background-light submodule reference
+        run: |
+          git submodule update --remote screen-background-light
+          git add screen-background-light
+          git commit -m "Automated update of screen-background-light submodule reference"
+          git push origin main
