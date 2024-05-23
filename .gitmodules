@@ -1,0 +1,3 @@
+[submodule "screen-background-light"]
+	path = screen-background-light
+	url = https://github.com/MarikTik/screen-background-light.git
